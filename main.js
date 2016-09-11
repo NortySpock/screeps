@@ -16,6 +16,7 @@ module.exports.loop = function () {
     }
     
     var harvesterCreepProt = [WORK,CARRY,MOVE];
+    console.log(Game.creeps.length);
     if(Game.creeps.length < 3 && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)){
        var targetName = "creep"+(Game.creeps.length)
        Game.spawns['Spawn1'].createCreep( harvesterCreepProt , targetName);
