@@ -16,9 +16,9 @@ module.exports.loop = function () {
     }
     
     var harvesterCreepProt = [WORK,CARRY,MOVE];
-    console.log(Game.creeps.length);
-    if((typeof Game.creeps.length == 'undefined' || Game.creeps.length < 3) && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)){
-       var targetName = "creep"+(Game.creeps.length)
-       Game.spawns['Spawn1'].createCreep( harvesterCreepProt , targetName);
+    // console.log(Game.creeps.length === undefined);
+    // console.log(Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt));
+    if(Game.creeps.length < 3 && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)){
+        Game.spawns['Spawn1'].createCreep(harvesterCreepProt);
     }
 }
