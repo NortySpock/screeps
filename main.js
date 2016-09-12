@@ -13,12 +13,21 @@ module.exports.loop = function () {
                 creep.moveTo(Game.spawns['Spawn1']);
             }
         }
+    if(creep.room.controller) {
+        if(creep.claimController(creep.room.controller) == ERR_NOT_IN_RANGE) {
+            creep.moveTo(creep.room.controller);
+        }
+        }
+        
     }
     
     var harvesterCreepProt = [WORK,CARRY,MOVE];
+    var claimCreepProt = [CLAIM,MOVE];
     // console.log(Game.creeps.length === undefined);
     var numCreeps = Object.keys(Game.creeps).length;
     if(numCreeps < 4 && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)===0){
         Game.spawns['Spawn1'].createCreep(harvesterCreepProt);
+    } else if(numCreeps === 4 Game.spawns['Spawn1'].canCreateCreep(claimCreepProt)===0){
+        Game.spawns['Spawn1'].createCreep(claimCreepProt);
     }
 }
