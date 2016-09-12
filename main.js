@@ -22,7 +22,7 @@ module.exports.loop = function () {
     }
     
     var harvesterCreepProt = [WORK,CARRY,MOVE];
-    var claimCreepProt = [CLAIM,MOVE];
+    var claimCreepProt = [CLAIM,WORK,CARRY,MOVE];
     // console.log(Game.creeps.length === undefined);
     var numCreeps = Object.keys(Game.creeps).length;
     if(numCreeps < 4 && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)===0){
