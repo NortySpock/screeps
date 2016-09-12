@@ -27,7 +27,7 @@ module.exports.loop = function () {
     var numCreeps = Object.keys(Game.creeps).length;
     if(numCreeps < 4 && Game.spawns['Spawn1'].canCreateCreep(harvesterCreepProt)===0){
         Game.spawns['Spawn1'].createCreep(harvesterCreepProt);
-    } else if(numCreeps === 4 Game.spawns['Spawn1'].canCreateCreep(claimCreepProt)===0){
+    } else if(numCreeps < 10 && Game.spawns['Spawn1'].canCreateCreep(claimCreepProt)===0){
         Game.spawns['Spawn1'].createCreep(claimCreepProt);
     }
 }
